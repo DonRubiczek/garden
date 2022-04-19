@@ -14,7 +14,8 @@ class $FloorAppDatabase {
       _$AppDatabaseBuilder(name);
 
   /// Creates a database builder for an in memory database.
-  /// Information stored in an in memory database disappears when the process is killed.
+  /// Information stored in an in memory database disappears when the process is
+  ///  killed.
   /// Once a database is built, you should keep a reference to it and re-use it.
   static _$AppDatabaseBuilder inMemoryDatabaseBuilder() =>
       _$AppDatabaseBuilder(null);
@@ -65,8 +66,11 @@ class _$AppDatabase extends AppDatabase {
 
   TypeDao? _typeDaoInstance;
 
-  Future<sqflite.Database> open(String path, List<Migration> migrations,
-      [Callback? callback]) async {
+  Future<sqflite.Database> open(
+    String path,
+    List<Migration> migrations, [
+    Callback? callback,
+  ]) async {
     final databaseOptions = sqflite.OpenDatabaseOptions(
       version: 1,
       onConfigure: (database) async {
@@ -78,15 +82,24 @@ class _$AppDatabase extends AppDatabase {
       },
       onUpgrade: (database, startVersion, endVersion) async {
         await MigrationAdapter.runMigrations(
-            database, startVersion, endVersion, migrations);
+          database,
+          startVersion,
+          endVersion,
+          migrations,
+        );
 
         await callback?.onUpgrade?.call(database, startVersion, endVersion);
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Plant` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL, `type` TEXT NOT NULL, `date` TEXT NOT NULL)');
+          'CREATE TABLE IF NOT EXISTS `Plant` (`id` INTEGER PRIMARY KEY '
+          'AUTOINCREMENT, `name` TEXT NOT NULL, `type` TEXT NOT NULL, `date` '
+          'TEXT NOT NULL)',
+        );
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Type` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL)');
+          'CREATE TABLE IF NOT EXISTS `Type` (`id` INTEGER PRIMARY KEY '
+          'AUTOINCREMENT, `name` TEXT NOT NULL)',
+        );
 
         await callback?.onCreate?.call(database, version);
       },
@@ -109,24 +122,26 @@ class _$PlantDao extends PlantDao {
   _$PlantDao(this.database, this.changeListener)
       : _queryAdapter = QueryAdapter(database),
         _plantInsertionAdapter = InsertionAdapter(
-            database,
-            'Plant',
-            (Plant item) => <String, Object?>{
-                  'id': item.id,
-                  'name': item.name,
-                  'type': item.type,
-                  'date': item.date
-                }),
+          database,
+          'Plant',
+          (Plant item) => <String, Object?>{
+            'id': item.id,
+            'name': item.name,
+            'type': item.type,
+            'date': item.date
+          },
+        ),
         _plantUpdateAdapter = UpdateAdapter(
-            database,
-            'Plant',
-            ['id'],
-            (Plant item) => <String, Object?>{
-                  'id': item.id,
-                  'name': item.name,
-                  'type': item.type,
-                  'date': item.date
-                });
+          database,
+          'Plant',
+          ['id'],
+          (Plant item) => <String, Object?>{
+            'id': item.id,
+            'name': item.name,
+            'type': item.type,
+            'date': item.date
+          },
+        );
 
   final sqflite.DatabaseExecutor database;
 
@@ -141,9 +156,16 @@ class _$PlantDao extends PlantDao {
   @override
   Future<List<Plant>> findPaginatedPlants(int id, String name) async {
     return _queryAdapter.queryList(
-        'SELECT * FROM Plant WHERE id > ?1 AND name LIKE ?2 ORDER BY id ASC LIMIT 10',
-        mapper: (Map<String, Object?> row) => Plant(id: row['id'] as int?, name: row['name'] as String, type: row['type'] as String, date: row['date'] as String),
-        arguments: [id, name]);
+      'SELECT * FROM Plant WHERE id > ?1 '
+      'AND name LIKE ?2 ORDER BY id ASC LIMIT 10',
+      mapper: (Map<String, Object?> row) => Plant(
+        id: row['id'] as int?,
+        name: row['name'] as String,
+        type: row['type'] as String,
+        date: row['date'] as String,
+      ),
+      arguments: [id, name],
+    );
   }
 
   @override
@@ -177,9 +199,13 @@ class _$TypeDao extends TypeDao {
 
   @override
   Future<List<Type>> findAllTypes() async {
-    return _queryAdapter.queryList('SELECT * FROM Type ORDER BY id DESC',
-        mapper: (Map<String, Object?> row) =>
-            Type(id: row['id'] as int?, name: row['name'] as String));
+    return _queryAdapter.queryList(
+      'SELECT * FROM Type ORDER BY id DESC',
+      mapper: (Map<String, Object?> row) => Type(
+        id: row['id'] as int?,
+        name: row['name'] as String,
+      ),
+    );
   }
 
   @override

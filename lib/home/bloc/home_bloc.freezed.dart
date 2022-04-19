@@ -1,6 +1,12 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use,
+//deprecated_member_use_from_same_package,
+// use_function_type_syntax_for_parameters,
+// unnecessary_const, avoid_init_to_null,
+// invalid_override_different_default_values_named,
+// prefer_expression_function_bodies,
+//annotate_overrides, invalid_annotation_target
 
 part of 'home_bloc.dart';
 
@@ -118,8 +124,9 @@ class _$HomeEventCopyWithImpl<$Res> implements $HomeEventCopyWith<$Res> {
 /// @nodoc
 abstract class $HomeFetchPageCopyWith<$Res> {
   factory $HomeFetchPageCopyWith(
-          HomeFetchPage value, $Res Function(HomeFetchPage) then) =
-      _$HomeFetchPageCopyWithImpl<$Res>;
+    HomeFetchPage value,
+    $Res Function(HomeFetchPage) then,
+  ) = _$HomeFetchPageCopyWithImpl<$Res>;
   $Res call({int id, String plantName});
 }
 
@@ -127,8 +134,9 @@ abstract class $HomeFetchPageCopyWith<$Res> {
 class _$HomeFetchPageCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
     implements $HomeFetchPageCopyWith<$Res> {
   _$HomeFetchPageCopyWithImpl(
-      HomeFetchPage _value, $Res Function(HomeFetchPage) _then)
-      : super(_value, (v) => _then(v as HomeFetchPage));
+    HomeFetchPage _value,
+    $Res Function(HomeFetchPage) _then,
+  ) : super(_value, (v) => _then(v as HomeFetchPage));
 
   @override
   HomeFetchPage get _value => super._value as HomeFetchPage;
@@ -138,16 +146,18 @@ class _$HomeFetchPageCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
     Object? id = freezed,
     Object? plantName = freezed,
   }) {
-    return _then(HomeFetchPage(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      plantName: plantName == freezed
-          ? _value.plantName
-          : plantName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      HomeFetchPage(
+        id: id == freezed
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                as int,
+        plantName: plantName == freezed
+            ? _value.plantName
+            : plantName // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -177,9 +187,10 @@ class _$HomeFetchPage implements HomeFetchPage {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(plantName));
+        runtimeType,
+        const DeepCollectionEquality().hash(id),
+        const DeepCollectionEquality().hash(plantName),
+      );
 
   @JsonKey(ignore: true)
   @override
@@ -286,8 +297,9 @@ abstract class $HomePlantAddedCopyWith<$Res> {
 class _$HomePlantAddedCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
     implements $HomePlantAddedCopyWith<$Res> {
   _$HomePlantAddedCopyWithImpl(
-      HomePlantAdded _value, $Res Function(HomePlantAdded) _then)
-      : super(_value, (v) => _then(v as HomePlantAdded));
+    HomePlantAdded _value,
+    $Res Function(HomePlantAdded) _then,
+  ) : super(_value, (v) => _then(v as HomePlantAdded));
 
   @override
   HomePlantAdded get _value => super._value as HomePlantAdded;
@@ -450,12 +462,14 @@ class _$HomePlantEditedCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
   $Res call({
     Object? plant = freezed,
   }) {
-    return _then(HomePlantEdited(
-      plant: plant == freezed
-          ? _value.plant
-          : plant // ignore: cast_nullable_to_non_nullable
-              as PlantData,
-    ));
+    return _then(
+      HomePlantEdited(
+        plant: plant == freezed
+            ? _value.plant
+            : plant // ignore: cast_nullable_to_non_nullable
+                as PlantData,
+      ),
+    );
   }
 
   @override
@@ -583,8 +597,9 @@ abstract class HomePlantEdited implements HomeEvent {
 /// @nodoc
 abstract class $HomeFindPlantByNameCopyWith<$Res> {
   factory $HomeFindPlantByNameCopyWith(
-          HomeFindPlantByName value, $Res Function(HomeFindPlantByName) then) =
-      _$HomeFindPlantByNameCopyWithImpl<$Res>;
+    HomeFindPlantByName value,
+    $Res Function(HomeFindPlantByName) then,
+  ) = _$HomeFindPlantByNameCopyWithImpl<$Res>;
   $Res call({String plantName});
 }
 
@@ -593,8 +608,9 @@ class _$HomeFindPlantByNameCopyWithImpl<$Res>
     extends _$HomeEventCopyWithImpl<$Res>
     implements $HomeFindPlantByNameCopyWith<$Res> {
   _$HomeFindPlantByNameCopyWithImpl(
-      HomeFindPlantByName _value, $Res Function(HomeFindPlantByName) _then)
-      : super(_value, (v) => _then(v as HomeFindPlantByName));
+    HomeFindPlantByName _value,
+    $Res Function(HomeFindPlantByName) _then,
+  ) : super(_value, (v) => _then(v as HomeFindPlantByName));
 
   @override
   HomeFindPlantByName get _value => super._value as HomeFindPlantByName;
@@ -603,12 +619,14 @@ class _$HomeFindPlantByNameCopyWithImpl<$Res>
   $Res call({
     Object? plantName = freezed,
   }) {
-    return _then(HomeFindPlantByName(
-      plantName: plantName == freezed
-          ? _value.plantName
-          : plantName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      HomeFindPlantByName(
+        plantName: plantName == freezed
+            ? _value.plantName
+            : plantName // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -857,16 +875,18 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
 /// @nodoc
 abstract class $HomeInitialCopyWith<$Res> {
   factory $HomeInitialCopyWith(
-          HomeInitial value, $Res Function(HomeInitial) then) =
-      _$HomeInitialCopyWithImpl<$Res>;
+    HomeInitial value,
+    $Res Function(HomeInitial) then,
+  ) = _$HomeInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class _$HomeInitialCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
     implements $HomeInitialCopyWith<$Res> {
   _$HomeInitialCopyWithImpl(
-      HomeInitial _value, $Res Function(HomeInitial) _then)
-      : super(_value, (v) => _then(v as HomeInitial));
+    HomeInitial _value,
+    $Res Function(HomeInitial) _then,
+  ) : super(_value, (v) => _then(v as HomeInitial));
 
   @override
   HomeInitial get _value => super._value as HomeInitial;
@@ -985,8 +1005,9 @@ abstract class HomeInitial implements HomeState {
 /// @nodoc
 abstract class $HomeInitilizedCopyWith<$Res> {
   factory $HomeInitilizedCopyWith(
-          HomeInitilized value, $Res Function(HomeInitilized) then) =
-      _$HomeInitilizedCopyWithImpl<$Res>;
+    HomeInitilized value,
+    $Res Function(HomeInitilized) then,
+  ) = _$HomeInitilizedCopyWithImpl<$Res>;
   $Res call({List<PlantData> plants, int pageKey});
 }
 
@@ -994,8 +1015,9 @@ abstract class $HomeInitilizedCopyWith<$Res> {
 class _$HomeInitilizedCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
     implements $HomeInitilizedCopyWith<$Res> {
   _$HomeInitilizedCopyWithImpl(
-      HomeInitilized _value, $Res Function(HomeInitilized) _then)
-      : super(_value, (v) => _then(v as HomeInitilized));
+    HomeInitilized _value,
+    $Res Function(HomeInitilized) _then,
+  ) : super(_value, (v) => _then(v as HomeInitilized));
 
   @override
   HomeInitilized get _value => super._value as HomeInitilized;
@@ -1044,9 +1066,10 @@ class _$HomeInitilized implements HomeInitilized {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(plants),
-      const DeepCollectionEquality().hash(pageKey));
+        runtimeType,
+        const DeepCollectionEquality().hash(plants),
+        const DeepCollectionEquality().hash(pageKey),
+      );
 
   @JsonKey(ignore: true)
   @override
@@ -1141,9 +1164,10 @@ class _$HomeInitilized implements HomeInitilized {
 }
 
 abstract class HomeInitilized implements HomeState {
-  const factory HomeInitilized(
-      {required List<PlantData> plants,
-      required int pageKey}) = _$HomeInitilized;
+  const factory HomeInitilized({
+    required List<PlantData> plants,
+    required int pageKey,
+  }) = _$HomeInitilized;
 
   List<PlantData> get plants;
   int get pageKey;
@@ -1154,9 +1178,10 @@ abstract class HomeInitilized implements HomeState {
 
 /// @nodoc
 abstract class $HomeEditedSuccessfullyCopyWith<$Res> {
-  factory $HomeEditedSuccessfullyCopyWith(HomeEditedSuccessfully value,
-          $Res Function(HomeEditedSuccessfully) then) =
-      _$HomeEditedSuccessfullyCopyWithImpl<$Res>;
+  factory $HomeEditedSuccessfullyCopyWith(
+    HomeEditedSuccessfully value,
+    $Res Function(HomeEditedSuccessfully) then,
+  ) = _$HomeEditedSuccessfullyCopyWithImpl<$Res>;
   $Res call({PlantData plant});
 
   $PlantDataCopyWith<$Res> get plant;
@@ -1166,9 +1191,10 @@ abstract class $HomeEditedSuccessfullyCopyWith<$Res> {
 class _$HomeEditedSuccessfullyCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res>
     implements $HomeEditedSuccessfullyCopyWith<$Res> {
-  _$HomeEditedSuccessfullyCopyWithImpl(HomeEditedSuccessfully _value,
-      $Res Function(HomeEditedSuccessfully) _then)
-      : super(_value, (v) => _then(v as HomeEditedSuccessfully));
+  _$HomeEditedSuccessfullyCopyWithImpl(
+    HomeEditedSuccessfully _value,
+    $Res Function(HomeEditedSuccessfully) _then,
+  ) : super(_value, (v) => _then(v as HomeEditedSuccessfully));
 
   @override
   HomeEditedSuccessfully get _value => super._value as HomeEditedSuccessfully;
@@ -1177,12 +1203,14 @@ class _$HomeEditedSuccessfullyCopyWithImpl<$Res>
   $Res call({
     Object? plant = freezed,
   }) {
-    return _then(HomeEditedSuccessfully(
-      plant: plant == freezed
-          ? _value.plant
-          : plant // ignore: cast_nullable_to_non_nullable
-              as PlantData,
-    ));
+    return _then(
+      HomeEditedSuccessfully(
+        plant: plant == freezed
+            ? _value.plant
+            : plant // ignore: cast_nullable_to_non_nullable
+                as PlantData,
+      ),
+    );
   }
 
   @override
@@ -1222,7 +1250,9 @@ class _$HomeEditedSuccessfully implements HomeEditedSuccessfully {
   @override
   $HomeEditedSuccessfullyCopyWith<HomeEditedSuccessfully> get copyWith =>
       _$HomeEditedSuccessfullyCopyWithImpl<HomeEditedSuccessfully>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -1323,9 +1353,10 @@ abstract class HomeEditedSuccessfully implements HomeState {
 
 /// @nodoc
 abstract class $HomeAddedSuccessfullyCopyWith<$Res> {
-  factory $HomeAddedSuccessfullyCopyWith(HomeAddedSuccessfully value,
-          $Res Function(HomeAddedSuccessfully) then) =
-      _$HomeAddedSuccessfullyCopyWithImpl<$Res>;
+  factory $HomeAddedSuccessfullyCopyWith(
+    HomeAddedSuccessfully value,
+    $Res Function(HomeAddedSuccessfully) then,
+  ) = _$HomeAddedSuccessfullyCopyWithImpl<$Res>;
   $Res call({PlantData plant});
 
   $PlantDataCopyWith<$Res> get plant;
@@ -1336,8 +1367,9 @@ class _$HomeAddedSuccessfullyCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res>
     implements $HomeAddedSuccessfullyCopyWith<$Res> {
   _$HomeAddedSuccessfullyCopyWithImpl(
-      HomeAddedSuccessfully _value, $Res Function(HomeAddedSuccessfully) _then)
-      : super(_value, (v) => _then(v as HomeAddedSuccessfully));
+    HomeAddedSuccessfully _value,
+    $Res Function(HomeAddedSuccessfully) _then,
+  ) : super(_value, (v) => _then(v as HomeAddedSuccessfully));
 
   @override
   HomeAddedSuccessfully get _value => super._value as HomeAddedSuccessfully;
@@ -1346,12 +1378,14 @@ class _$HomeAddedSuccessfullyCopyWithImpl<$Res>
   $Res call({
     Object? plant = freezed,
   }) {
-    return _then(HomeAddedSuccessfully(
-      plant: plant == freezed
-          ? _value.plant
-          : plant // ignore: cast_nullable_to_non_nullable
-              as PlantData,
-    ));
+    return _then(
+      HomeAddedSuccessfully(
+        plant: plant == freezed
+            ? _value.plant
+            : plant // ignore: cast_nullable_to_non_nullable
+                as PlantData,
+      ),
+    );
   }
 
   @override
@@ -1493,8 +1527,9 @@ abstract class HomeAddedSuccessfully implements HomeState {
 /// @nodoc
 abstract class $HomeNextPageCopyWith<$Res> {
   factory $HomeNextPageCopyWith(
-          HomeNextPage value, $Res Function(HomeNextPage) then) =
-      _$HomeNextPageCopyWithImpl<$Res>;
+    HomeNextPage value,
+    $Res Function(HomeNextPage) then,
+  ) = _$HomeNextPageCopyWithImpl<$Res>;
   $Res call({List<PlantData> plants, int pageKey});
 }
 
@@ -1502,8 +1537,9 @@ abstract class $HomeNextPageCopyWith<$Res> {
 class _$HomeNextPageCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
     implements $HomeNextPageCopyWith<$Res> {
   _$HomeNextPageCopyWithImpl(
-      HomeNextPage _value, $Res Function(HomeNextPage) _then)
-      : super(_value, (v) => _then(v as HomeNextPage));
+    HomeNextPage _value,
+    $Res Function(HomeNextPage) _then,
+  ) : super(_value, (v) => _then(v as HomeNextPage));
 
   @override
   HomeNextPage get _value => super._value as HomeNextPage;
@@ -1552,9 +1588,10 @@ class _$HomeNextPage implements HomeNextPage {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(plants),
-      const DeepCollectionEquality().hash(pageKey));
+        runtimeType,
+        const DeepCollectionEquality().hash(plants),
+        const DeepCollectionEquality().hash(pageKey),
+      );
 
   @JsonKey(ignore: true)
   @override
@@ -1649,8 +1686,10 @@ class _$HomeNextPage implements HomeNextPage {
 }
 
 abstract class HomeNextPage implements HomeState {
-  const factory HomeNextPage(
-      {required List<PlantData> plants, required int pageKey}) = _$HomeNextPage;
+  const factory HomeNextPage({
+    required List<PlantData> plants,
+    required int pageKey,
+  }) = _$HomeNextPage;
 
   List<PlantData> get plants;
   int get pageKey;
@@ -1679,12 +1718,14 @@ class _$HomeErrorCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(HomeError(
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      HomeError(
+        message: message == freezed
+            ? _value.message
+            : message // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 

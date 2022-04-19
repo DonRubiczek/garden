@@ -1,6 +1,12 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use,
+//deprecated_member_use_from_same_package,
+//use_function_type_syntax_for_parameters,
+//unnecessary_const, avoid_init_to_null,
+//invalid_override_different_default_values_named,
+// prefer_expression_function_bodies, annotate_overrides,
+// invalid_annotation_target
 
 part of 'form_bloc.dart';
 
@@ -11,7 +17,8 @@ part of 'form_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 /// @nodoc
 class _$FormEventTearOff {
@@ -115,12 +122,14 @@ class _$FormEventCopyWithImpl<$Res> implements $FormEventCopyWith<$Res> {
   $Res call({
     Object? plant = freezed,
   }) {
-    return _then(_value.copyWith(
-      plant: plant == freezed
-          ? _value.plant
-          : plant // ignore: cast_nullable_to_non_nullable
-              as PlantData,
-    ));
+    return _then(
+      _value.copyWith(
+        plant: plant == freezed
+            ? _value.plant
+            : plant // ignore: cast_nullable_to_non_nullable
+                as PlantData,
+      ),
+    );
   }
 
   @override
@@ -134,9 +143,10 @@ class _$FormEventCopyWithImpl<$Res> implements $FormEventCopyWith<$Res> {
 /// @nodoc
 abstract class $FormChangePlantPropertyCopyWith<$Res>
     implements $FormEventCopyWith<$Res> {
-  factory $FormChangePlantPropertyCopyWith(FormChangePlantProperty value,
-          $Res Function(FormChangePlantProperty) then) =
-      _$FormChangePlantPropertyCopyWithImpl<$Res>;
+  factory $FormChangePlantPropertyCopyWith(
+    FormChangePlantProperty value,
+    $Res Function(FormChangePlantProperty) then,
+  ) = _$FormChangePlantPropertyCopyWithImpl<$Res>;
   @override
   $Res call({PlantData plant});
 
@@ -148,9 +158,10 @@ abstract class $FormChangePlantPropertyCopyWith<$Res>
 class _$FormChangePlantPropertyCopyWithImpl<$Res>
     extends _$FormEventCopyWithImpl<$Res>
     implements $FormChangePlantPropertyCopyWith<$Res> {
-  _$FormChangePlantPropertyCopyWithImpl(FormChangePlantProperty _value,
-      $Res Function(FormChangePlantProperty) _then)
-      : super(_value, (v) => _then(v as FormChangePlantProperty));
+  _$FormChangePlantPropertyCopyWithImpl(
+    FormChangePlantProperty _value,
+    $Res Function(FormChangePlantProperty) _then,
+  ) : super(_value, (v) => _then(v as FormChangePlantProperty));
 
   @override
   FormChangePlantProperty get _value => super._value as FormChangePlantProperty;
@@ -159,12 +170,14 @@ class _$FormChangePlantPropertyCopyWithImpl<$Res>
   $Res call({
     Object? plant = freezed,
   }) {
-    return _then(FormChangePlantProperty(
-      plant: plant == freezed
-          ? _value.plant
-          : plant // ignore: cast_nullable_to_non_nullable
-              as PlantData,
-    ));
+    return _then(
+      FormChangePlantProperty(
+        plant: plant == freezed
+            ? _value.plant
+            : plant // ignore: cast_nullable_to_non_nullable
+                as PlantData,
+      ),
+    );
   }
 }
 
@@ -828,9 +841,10 @@ abstract class FormInitial implements FormState {
 
 /// @nodoc
 abstract class $FormPlantPropertiesChangedCopyWith<$Res> {
-  factory $FormPlantPropertiesChangedCopyWith(FormPlantPropertiesChanged value,
-          $Res Function(FormPlantPropertiesChanged) then) =
-      _$FormPlantPropertiesChangedCopyWithImpl<$Res>;
+  factory $FormPlantPropertiesChangedCopyWith(
+    FormPlantPropertiesChanged value,
+    $Res Function(FormPlantPropertiesChanged) then,
+  ) = _$FormPlantPropertiesChangedCopyWithImpl<$Res>;
   $Res call({PlantData plant});
 
   $PlantDataCopyWith<$Res> get plant;

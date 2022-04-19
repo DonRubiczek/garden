@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class Loader extends StatefulWidget {
-  Loader({
+  const Loader({
     Key? key,
     this.centralDotColor = Colors.black26,
     this.dotOneColor = Colors.red,
@@ -47,7 +47,7 @@ class _LoaderState extends State<Loader> with SingleTickerProviderStateMixin {
   late Animation<double> animationRadiusOut;
 
   final double initialRadius;
-  double radius = 0.0;
+  double radius = 0;
 
   @override
   void initState() {
@@ -58,41 +58,40 @@ class _LoaderState extends State<Loader> with SingleTickerProviderStateMixin {
     );
 
     animationRadiusIn = Tween<double>(
-      begin: 1.0,
-      end: 0.0,
+      begin: 1,
+      end: 0,
     ).animate(
       CurvedAnimation(
         parent: controller,
         curve: const Interval(
           0.75,
-          1.0,
+          1,
           curve: Curves.elasticIn,
         ),
       ),
     );
     animationRadiusOut = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
+      begin: 0,
+      end: 1,
     ).animate(
       CurvedAnimation(
         parent: controller,
         curve: const Interval(
-          0.0,
+          0,
           0.25,
           curve: Curves.elasticOut,
         ),
       ),
     );
     animationRotation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
+      begin: 0,
+      end: 1,
     ).animate(
       CurvedAnimation(
         parent: controller,
         curve: const Interval(
-          0.0,
-          1.0,
-          curve: Curves.linear,
+          0,
+          1,
         ),
       ),
     );
@@ -121,7 +120,7 @@ class _LoaderState extends State<Loader> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: Center(
@@ -134,77 +133,85 @@ class _LoaderState extends State<Loader> with SingleTickerProviderStateMixin {
                 color: widget.centralDotColor,
               ),
               Transform.translate(
-                  offset: Offset(
-                    cos(pi / 4) * radius,
-                    sin(pi / 4) * radius,
-                  ),
-                  child: Dot(
-                    radius: widget.outerDotRadius,
-                    color: widget.dotOneColor,
-                  )),
+                offset: Offset(
+                  cos(pi / 4) * radius,
+                  sin(pi / 4) * radius,
+                ),
+                child: Dot(
+                  radius: widget.outerDotRadius,
+                  color: widget.dotOneColor,
+                ),
+              ),
               Transform.translate(
-                  offset: Offset(
-                    cos(2 * pi / 4) * radius,
-                    sin(2 * pi / 4) * radius,
-                  ),
-                  child: Dot(
-                    radius: widget.outerDotRadius,
-                    color: widget.dotTwoColor,
-                  )),
+                offset: Offset(
+                  cos(2 * pi / 4) * radius,
+                  sin(2 * pi / 4) * radius,
+                ),
+                child: Dot(
+                  radius: widget.outerDotRadius,
+                  color: widget.dotTwoColor,
+                ),
+              ),
               Transform.translate(
-                  offset: Offset(
-                    cos(3 * pi / 4) * radius,
-                    sin(3 * pi / 4) * radius,
-                  ),
-                  child: Dot(
-                    radius: widget.outerDotRadius,
-                    color: widget.dotThreeColor,
-                  )),
+                offset: Offset(
+                  cos(3 * pi / 4) * radius,
+                  sin(3 * pi / 4) * radius,
+                ),
+                child: Dot(
+                  radius: widget.outerDotRadius,
+                  color: widget.dotThreeColor,
+                ),
+              ),
               Transform.translate(
-                  offset: Offset(
-                    cos(pi) * radius,
-                    sin(pi) * radius,
-                  ),
-                  child: Dot(
-                    radius: widget.outerDotRadius,
-                    color: widget.dotFourColor,
-                  )),
+                offset: Offset(
+                  cos(pi) * radius,
+                  sin(pi) * radius,
+                ),
+                child: Dot(
+                  radius: widget.outerDotRadius,
+                  color: widget.dotFourColor,
+                ),
+              ),
               Transform.translate(
-                  offset: Offset(
-                    cos(5 * pi / 4) * radius,
-                    sin(5 * pi / 4) * radius,
-                  ),
-                  child: Dot(
-                    radius: widget.outerDotRadius,
-                    color: widget.dotFiveColor,
-                  )),
+                offset: Offset(
+                  cos(5 * pi / 4) * radius,
+                  sin(5 * pi / 4) * radius,
+                ),
+                child: Dot(
+                  radius: widget.outerDotRadius,
+                  color: widget.dotFiveColor,
+                ),
+              ),
               Transform.translate(
-                  offset: Offset(
-                    cos(6 * pi / 4) * radius,
-                    sin(6 * pi / 4) * radius,
-                  ),
-                  child: Dot(
-                    radius: widget.outerDotRadius,
-                    color: widget.dotSixColor,
-                  )),
+                offset: Offset(
+                  cos(6 * pi / 4) * radius,
+                  sin(6 * pi / 4) * radius,
+                ),
+                child: Dot(
+                  radius: widget.outerDotRadius,
+                  color: widget.dotSixColor,
+                ),
+              ),
               Transform.translate(
-                  offset: Offset(
-                    cos(7 * pi / 4) * radius,
-                    sin(7 * pi / 4) * radius,
-                  ),
-                  child: Dot(
-                    radius: widget.outerDotRadius,
-                    color: widget.dotSevenColor,
-                  )),
+                offset: Offset(
+                  cos(7 * pi / 4) * radius,
+                  sin(7 * pi / 4) * radius,
+                ),
+                child: Dot(
+                  radius: widget.outerDotRadius,
+                  color: widget.dotSevenColor,
+                ),
+              ),
               Transform.translate(
-                  offset: Offset(
-                    cos(8 * pi / 4) * radius,
-                    sin(8 * pi / 4) * radius,
-                  ),
-                  child: Dot(
-                    radius: widget.outerDotRadius,
-                    color: widget.dotEightColor,
-                  )),
+                offset: Offset(
+                  cos(8 * pi / 4) * radius,
+                  sin(8 * pi / 4) * radius,
+                ),
+                child: Dot(
+                  radius: widget.outerDotRadius,
+                  color: widget.dotEightColor,
+                ),
+              ),
             ],
           ),
         ),

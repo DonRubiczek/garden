@@ -33,7 +33,6 @@ class AppBackend extends Backend {
         await $FloorAppDatabase.databaseBuilder('app_database.db').build();
 
     await appDatabase.database.execute('DELETE FROM Type');
-    await appDatabase.database.execute('DELETE FROM Plant');
 
     await appDatabase.database.insert('Type', {'name': 'alpines'});
     await appDatabase.database.insert('Type', {'name': 'aquatic'});
