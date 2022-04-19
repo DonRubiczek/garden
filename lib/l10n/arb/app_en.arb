@@ -1,0 +1,26 @@
+{
+    "@@locale": "en",
+    "counterAppBarTitle": "Counter",
+    "@counterAppBarTitle": {
+        "description": "Text shown in the AppBar of the Counter Page"
+    },
+    "homePageTitle": "Garden",
+    "homePageFindPlantDesc": "Find plant by name",
+    "homePageFindPlantPLaceholder": "Plant name",
+    "homePagePlantWithNameNotFound": "There are no plants in database matching added name",
+    "homePageEmptyDatabase": "There are no plants in database",
+    "formPageCreateTitle": "Add plant",
+    "formPageEditTitle": "Update plant",
+    "formPageNameLabel": "Name",
+    "formPageAddNameInputPlaceholder": "Enter plant name",
+    "formPageUpdateNameInputPlaceholder": "Update plant name",
+    "formPageTypeLabel": "Type",
+    "formPagePlantDateLabel": "Planting date",
+    "formPageSubtitleAdd": "Add plant data",
+    "formPageSubtitleEdit": "Edit plant data",
+    "formPageSelectDate": "Select planting date",
+    "errorPageTitle": "Error ocurred",
+    "ok": "Ok",
+    "dismissDialog": "Dismiss",
+    "save": "Save"
+}
