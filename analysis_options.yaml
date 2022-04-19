@@ -1,7 +1,7 @@
 include: package:very_good_analysis/analysis_options.2.4.0.yaml
 
 analyzer:
-  exclude: [lib/database/database.g.dart, lib/form/bloc/form_bloc.freezed, lib/home/bloc/home_bloc.freezed.dart, lib/model/plant_data.freezed.dart]
+  exclude: [lib/database/database.g.dart, lib/form/bloc/form_bloc.freezed.dart, lib/home/bloc/home_bloc.freezed.dart, lib/model/plant_data.freezed.dart]
 
 linter:
   rules:

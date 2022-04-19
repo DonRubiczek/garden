@@ -35,18 +35,18 @@ class Loader extends StatefulWidget {
   final Duration duration;
 
   @override
-  _LoaderState createState() => _LoaderState(centralDotRadius);
+  // ignore: library_private_types_in_public_api
+  _LoaderState createState() => _LoaderState();
 }
 
 class _LoaderState extends State<Loader> with SingleTickerProviderStateMixin {
-  _LoaderState(this.initialRadius);
+  _LoaderState();
 
   late AnimationController controller;
   late Animation<double> animationRotation;
   late Animation<double> animationRadiusIn;
   late Animation<double> animationRadiusOut;
 
-  final double initialRadius;
   double radius = 0;
 
   @override
@@ -99,11 +99,11 @@ class _LoaderState extends State<Loader> with SingleTickerProviderStateMixin {
     controller.addListener(() {
       if (controller.value >= 0.75 && controller.value <= 1.0) {
         setState(() {
-          radius = animationRadiusIn.value * initialRadius;
+          radius = animationRadiusIn.value * widget.centralDotRadius;
         });
       } else if (controller.value >= 0.0 && controller.value <= 0.25) {
         setState(() {
-          radius = animationRadiusOut.value * initialRadius;
+          radius = animationRadiusOut.value * widget.centralDotRadius;
         });
       }
     });

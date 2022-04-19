@@ -74,7 +74,6 @@ class _HomeViewState extends State<HomeView> {
         }
       },
       child: Scaffold(
-        //key: myGlobals.scaffoldKey,
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: context.theme.accentColor,
@@ -107,19 +106,24 @@ class _HomeViewState extends State<HomeView> {
               _pagingController.itemList = null;
               _appendListItems(state.plants, state.pageKey);
             } else if (state is HomeEditedSuccessfully) {
-              final index = _pagingController.itemList?.indexWhere(
-                (element) => element.identifier == state.plant.identifier,
-              );
-
-              if (index != null) {
-                _pagingController.itemList![index] = state.plant;
-                _pagingController.notifyListeners();
-              }
+              context.read<HomeBloc>().add(
+                    HomeEvent.fetchPage(
+                      id: 0,
+                      plantName: _nameController.text,
+                    ),
+                  );
 
               _displaySnackBar(
                 'Plant with name: ${state.plant.name} edited successfully',
               );
             } else if (state is HomeAddedSuccessfully) {
+              context.read<HomeBloc>().add(
+                    HomeEvent.fetchPage(
+                      id: 0,
+                      plantName: _nameController.text,
+                    ),
+                  );
+
               _displaySnackBar(
                 'Plant with name: ${state.plant.name} added successfully',
               );
@@ -195,12 +199,14 @@ class _HomeViewState extends State<HomeView> {
               ),
               label: context.l10n.homePageFindPlantPLaceholder,
               controller: _nameController,
-              onChanged: (value) => context.read<HomeBloc>().add(
-                    HomeEvent.fetchPage(
-                      id: 0,
-                      plantName: value,
-                    ),
-                  ),
+              onChanged: (value) {
+                context.read<HomeBloc>().add(
+                      HomeEvent.fetchPage(
+                        id: 0,
+                        plantName: value,
+                      ),
+                    );
+              },
             ),
             const SizedBox(
               height: 10,

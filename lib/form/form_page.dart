@@ -264,16 +264,15 @@ class _FormViewState extends State<FormView> {
       lastDate: DateTime.now(),
     );
     if (picked != null && picked.toIso8601String() != plant.date) {
-      if (!mounted) return;
-
-      Navigator.of(context).pop();
-      context.read<bloc.FormBloc>().add(
-            bloc.FormEvent.changePlantProperty(
-              plant: plant.copyWith(
-                date: picked.toIso8601String(),
+      if (mounted) {
+        context.read<bloc.FormBloc>().add(
+              bloc.FormEvent.changePlantProperty(
+                plant: plant.copyWith(
+                  date: picked.toIso8601String(),
+                ),
               ),
-            ),
-          );
+            );
+      }
     }
   }
 

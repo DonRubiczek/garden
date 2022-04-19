@@ -41,18 +41,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
                 plant: event.plant,
               ),
             );
-
-            final paginatedPlants =
-                await plantRepository.findPaginatedPlants(0, '%');
-
-            emit(
-              HomeState.initialized(
-                plants: paginatedPlants,
-                pageKey: 0,
-              ),
-            );
-
-            currentPageKey = 0;
           } else if (event is HomePlantEdited) {
             emit(
               HomeState.editedSuccessfully(

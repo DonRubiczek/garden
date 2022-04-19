@@ -183,19 +183,7 @@ void main() {
           HomeState.addedSuccessfully(
             plant: Resources.getPlant(),
           ),
-          HomeState.initialized(
-            plants: Resources.getPlantList().take(10).toList(),
-            pageKey: 0,
-          ),
         ],
-        verify: (_) {
-          verify(
-            () => plantRepository.findPaginatedPlants(
-              0,
-              '%',
-            ),
-          ).called(1);
-        },
       );
 
       blocTest<HomeBloc, HomeState>(
