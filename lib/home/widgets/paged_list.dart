@@ -24,8 +24,8 @@ class PagedList extends StatelessWidget {
         itemBuilder: (context, item, index) => PlantTile(
           plant: item,
         ),
-        firstPageProgressIndicatorBuilder: (context) => Loader(),
-        newPageProgressIndicatorBuilder: (context) => Loader(),
+        firstPageProgressIndicatorBuilder: (context) => const Loader(),
+        newPageProgressIndicatorBuilder: (context) => const Loader(),
         firstPageErrorIndicatorBuilder: (context) => Container(),
         noItemsFoundIndicatorBuilder: (context) => Container(
           padding: const EdgeInsets.fromLTRB(10, 30, 10, 20),

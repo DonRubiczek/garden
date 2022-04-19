@@ -43,6 +43,7 @@ class FormView extends StatefulWidget {
   final PlantData plant;
 
   @override
+  // ignore: library_private_types_in_public_api
   _FormViewState createState() => _FormViewState();
 }
 
@@ -113,7 +114,7 @@ class _FormViewState extends State<FormView> {
           } else if (state is bloc.FormPlantPropertiesChanged) {
             return _buildPage(state.plant);
           } else if (state is bloc.FormLoading) {
-            return Loader();
+            return const Loader();
           } else {
             return _buildPage(
               PlantData(
@@ -263,6 +264,9 @@ class _FormViewState extends State<FormView> {
       lastDate: DateTime.now(),
     );
     if (picked != null && picked.toIso8601String() != plant.date) {
+      if (!mounted) return;
+
+      Navigator.of(context).pop();
       context.read<bloc.FormBloc>().add(
             bloc.FormEvent.changePlantProperty(
               plant: plant.copyWith(
